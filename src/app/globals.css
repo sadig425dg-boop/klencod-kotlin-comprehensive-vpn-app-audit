@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0a0a0f;
+  --color-dark-card: #13131a;
+  --color-dark-card-hover: #1a1a25;
+  --color-dark-border: #1e1e2e;
+  --color-dark-border-light: #2a2a3e;
+  --color-neon-pink: #ff2d78;
+  --color-neon-pink-light: #ff5a9e;
+  --color-neon-purple: #9945ff;
+  --color-neon-purple-light: #b06aff;
+  --color-neon-green: #00e676;
+  --color-neon-cyan: #00e5ff;
+  --color-neon-yellow: #ffea00;
+  --color-neon-orange: #ff9100;
+  --color-neon-red: #ff1744;
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #9898b0;
+  --color-text-muted: #5a5a72;
+  --font-family-cairo: 'Cairo', sans-serif;
+}
+
+* {
+  font-family: var(--font-family-cairo);
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-primary);
+  direction: rtl;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border-light);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-purple);
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 45, 120, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 45, 120, 0.6); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ring-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}
+
+.animate-ring-pulse {
+  animation: ring-pulse 2s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-neon-pink), var(--color-neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(19, 19, 26, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Neon border */
+.neon-border {
+  border: 1px solid rgba(153, 69, 255, 0.3);
+  box-shadow: 0 0 15px rgba(153, 69, 255, 0.1);
+}
+
+.neon-border-pink {
+  border: 1px solid rgba(255, 45, 120, 0.3);
+  box-shadow: 0 0 15px rgba(255, 45, 120, 0.1);
+}
